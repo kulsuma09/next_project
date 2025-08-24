@@ -1,8 +1,8 @@
-
+import dynamic from "next/dynamic";
 import { ALL_POSTS } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import PostDetailClientWrapper from "@/components/PostDetailClientWrapper";
 const comments = [
   {
     name: "Emily Carter",
@@ -47,7 +47,7 @@ export default function PostDetail({ params }: { params: { id: string } }) {
       <p className="text-base leading-relaxed text-[#0d141c] mb-10">
         {post.excerpt}
       </p>
-
+      <PostDetailClientWrapper title={post.title} />
       <hr className="mb-6" />
 
       {/* Comments Section */}
